@@ -6,6 +6,7 @@ A module for parsing `redis://..` URLs into
 
 Can also create actual client instance for your convenience.
 
+[![Build Status](https://secure.travis-ci.org/laggyluke/node-parse-redis-url.png)](http://travis-ci.org/laggyluke/node-parse-redis-url)
 
 Usage
 -----
