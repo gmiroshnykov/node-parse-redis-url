@@ -1,0 +1,16 @@
+{
+  "name": "parse-redis-url",
+  "version": "0.0.1",
+  "description": "Parses Redis URL into a node_redis config object",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": "https://github.com/laggyluke/node-parse-redis-url.git",
+  "author": "George Miroshnykov <george.miroshnykov@gmail.com>",
+  "license": "BSD",
+  "devDependencies": {
+    "mocha": "~1.9.0",
+    "redis": "~0.8.3"
+  }
+}
