@@ -52,17 +52,21 @@ ParseRedisUrl.prototype.parse = function(redisUrl) {
 ParseRedisUrl.prototype.createClient = function(redisUrl, callback) {
   var options = this.parse(redisUrl);
   var redisClient = this.module.createClient(options.port, options.host);
-  return authenticate(redisClient, options, callback);
+
+  callback || (callback = function() {});
+  authenticate(redisClient, options, callback);
+  
+  return redisClient;
 };
 
 function authenticate(redisClient, options, callback) {
   if (options.password) {
     redisClient.auth(options.password, function(err) {
       if (err) return callback(err);
-      return selectDatabase(redisClient, options, callback);
+      selectDatabase(redisClient, options, callback);
     });
   } else {
-    return selectDatabase(redisClient, options, callback);
+    selectDatabase(redisClient, options, callback);
   }
 }
 
@@ -70,9 +74,9 @@ function selectDatabase(redisClient, options, callback) {
   if (options.database) {
     redisClient.select(options.database, function(err) {
       if (err) return callback(err);
-      return callback(null, redisClient);
+      callback(null, redisClient);
     });
   } else {
-    return callback(null, redisClient);
+    callback(null, redisClient);
   }
 }
