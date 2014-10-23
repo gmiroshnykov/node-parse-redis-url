@@ -66,7 +66,8 @@ describe('parse-redis-url', function() {
     var expected = {
       host: 'example.com',
       port: 6379,
-      password: 'secret'
+      password: 'secret',
+      pass: 'secret'
     };
     var actual = parseRedisUrl.parse(url);
     assert.deepEqual(expected, actual);
@@ -99,6 +100,7 @@ describe('parse-redis-url', function() {
       host: 'example.com',
       port: 5000,
       password: 'secret',
+      pass: 'secret',
       database: 42
     };
     var actual = parseRedisUrl.parse(url);
