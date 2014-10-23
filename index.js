@@ -40,6 +40,7 @@ ParseRedisUrl.prototype.parse = function(redisUrl) {
 
   if (parts.auth) {
     options.password = parts.auth.substr(parts.auth.indexOf(':') + 1);
+    options.pass = options.password;
   }
 
   if (parts.path && parts.path.length > 1) {
