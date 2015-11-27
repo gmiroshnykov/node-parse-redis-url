@@ -1,8 +1,10 @@
 parse-redis-url
 ===============
 
+**This module is no longer needed for [node_redis](https://github.com/NodeRedis/node_redis) from v.1.0.0 on. [node_redis](https://github.com/NodeRedis/node_redis) has a built-in url option**
+
 A module for parsing `redis://..` URLs into
-[node_redis](https://github.com/mranney/node_redis)-friendly options.
+[node_redis](https://github.com/NodeRedis/node_redis)-friendly options.
 
 Can also create actual client instance for your convenience.
 
